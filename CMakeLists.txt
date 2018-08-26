@@ -9,12 +9,14 @@ endif()
 
 set(CMAKE_CXX_STANDARD 11)
 
+find_package(OpenCV REQUIRED)
 add_subdirectory(lib)
 
 include_directories(include)
 file(GLOB_RECURSE SOURCE_FILES
+        "include/*.h"
         "src/*.cpp"
         )
 
-add_executable(LED_Sign main.cpp ${SOURCE_FILES} include/SomeClass.h include/SomeMoreComplicatedClass.h src/SomeMoreComplicatedClass.cpp)
-target_link_libraries(LED_Sign pthread)
+add_executable(LED_Sign main.cpp ${SOURCE_FILES})
+target_link_libraries(LED_Sign pthread ${OpenCV_LIBS})

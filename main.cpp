@@ -1,13 +1,16 @@
-#include <SomeMoreComplicatedClass.h>
-#include "SomeClass.h"
+#include <opencv2/opencv.hpp>
+
+#include "PrimaryDisplay.h"
+#include <unistd.h>
 
 int main() {
-    SomeClass c{
-        .x = 5,
-        .y = 4
-    };
+    PrimaryDisplay display(64, 32, CV_8UC3);
 
-    SomeMoreComplicatedClass cc;
+    cv::Mat theImage = cv::imread("/Users/cameronearle/Desktop/the_image.jpg");
 
-    cc.doSomething();
+    display.putImageLayer(&theImage);
+
+    display.render();
+
+    usleep(2e10);
 }
