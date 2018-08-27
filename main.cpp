@@ -3,6 +3,8 @@
 #include "PrimaryDisplay.h"
 #include <unistd.h>
 
+#include "websocketpp/server.hpp"
+
 int main() {
     PrimaryDisplay display(64, 32, CV_8UC3);
 

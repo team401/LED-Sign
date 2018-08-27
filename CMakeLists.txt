@@ -19,4 +19,4 @@ file(GLOB_RECURSE SOURCE_FILES
         )
 
 add_executable(LED_Sign main.cpp ${SOURCE_FILES})
-target_link_libraries(LED_Sign pthread ${OpenCV_LIBS})
+target_link_libraries(LED_Sign pthread wiringpi rpi-rgb-led-matrix websocketpp ${OpenCV_LIBS})

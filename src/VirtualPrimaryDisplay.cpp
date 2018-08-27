@@ -17,7 +17,7 @@ void PrimaryDisplay::putImageLayer(cv::Mat *layer) {
 }
 
 void PrimaryDisplay::render() {
-    cv::imshow("Primary Display", renderMat);
+    cv::imshow("Simulated LED Matrix (" + std::to_string(width) + "x" + std::to_string(height) + " px)", renderMat);
     cv::waitKey(1);
 }
 
